@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const replace = require("replace");
 
-const dir = path.resolve(__dirname, 'dist/src/components');
+const dir = path.resolve(__dirname, 'dist/components');
 
 
 fs.readdir(dir, (error, fileNames) => {

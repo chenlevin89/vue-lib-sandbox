@@ -1,7 +1,7 @@
 {
   "name": "vue-lib-sandbox",
   "private": true,
-  "version": "0.0.21",
+  "version": "0.0.26",
   "scripts": {
     "dev": "vite",
     "build": "vite build && vue-tsc --declaration --emitDeclarationOnly && node inject-css.js",
@@ -24,13 +24,13 @@
   "module": "./index.js",
   "exports": {
     ".": {
-      "import": "./src/index.js"
+      "import": "./index.js"
     },
     "./components/button": {
-      "import": "./src/components/button/Button.vue.js"
+      "import": "./components/button/Button.vue.js"
     },
     "./components/input": {
-      "import": "./src/components/input/Input.vue.js"
+      "import": "./components/input/Input.vue.js"
     }
   },
   "typesVersions": {
