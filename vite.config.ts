@@ -14,7 +14,7 @@ const transformCssPlugin = () => {
         const name = splitId[splitId.length-1].split('.')[0];
         const component = name.slice(0,1).toUpperCase() + name.slice(1); 
         return {
-          code: `////import "../../${component}.vue_vue_type_style_index_0_scoped_true_lang.css";\n${src}`
+          code: `////import "../../../${component}.vue_vue_type_style_index_0_scoped_true_lang.css";\n${src}`
         }
       }
     }

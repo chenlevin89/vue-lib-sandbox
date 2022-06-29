@@ -2,6 +2,7 @@
 
 import {computed} from 'vue';
 import Icon from '../icon/Icon.vue';
+import {VTooltip} from 'floating-vue'
 
 const props = withDefaults(defineProps<{
     size?: 'small' | 'medium' | 'big'
@@ -17,10 +18,18 @@ const cls = computed(() => props.size);
 
 <template>
 
-    <button :class="[cls]">
-        <slot />
-        <Icon />
-    </button>
+    <VTooltip>
+        <button :class="[cls]">
+            <slot />
+            <Icon />
+        </button>
+
+        <template #popper>
+            Help me fund my Open Source work!
+        </template>
+
+    </VTooltip>
+
 
 </template>
 
