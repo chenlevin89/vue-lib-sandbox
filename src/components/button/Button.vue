@@ -3,6 +3,7 @@
 import {computed} from 'vue';
 import Icon from '../icon/Icon.vue';
 // import {VTooltip} from 'floating-vue'
+import Popper from "vue3-popper";
 
 import icons from './config';
 
@@ -22,13 +23,14 @@ const cls = computed(() => props.size);
 </script>
 
 <template>
+    <Popper content="This is the Popper content 🍿">
 
-    
         <button :class="[cls]">
             <slot />
             <Icon />
         </button>
 
+    </Popper>
 
 </template>
 

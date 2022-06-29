@@ -38,7 +38,7 @@ export default defineConfig({
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ["vue", "floating-vue"],
+      external: ["vue", "floating-vue", "vue3-popper"],
       output: {
         preserveModules: true,
         entryFileNames: ({name: fileName}) => {
