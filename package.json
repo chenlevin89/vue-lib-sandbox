@@ -1,10 +1,10 @@
 {
   "name": "vue-lib-sandbox",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.20",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly && node inject-css.js",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -13,18 +13,36 @@
   "devDependencies": {
     "@types/node": "^18.0.0",
     "@vitejs/plugin-vue": "^2.3.3",
+    "replace": "^1.2.1",
     "typescript": "^4.5.4",
     "vite": "^2.9.9",
-    "vue-tsc": "^0.34.7"
+    "vite-plugin-static-copy": "^0.6.0",
+    "vue-tsc": "^0.35.0"
   },
-  "files": ["dist"],
-  "main": "./dist/vue-lib-sandbox.umd.js",
-  "module": "./dist/vue-lib-sandbox.es.js",
+  "main": "./index.js",
+  "module": "./index.js",
   "exports": {
     ".": {
-      "import": "./dist/vue-lib-sandbox.es.js",
-      "require": "./dist/vue-lib-sandbox.umd.js"
+      "types": "./index.d.ts",
+      "import": "./index.js"
+    },
+    "./components/button": {
+      "types": "./components/button/Button.vue.d.ts",
+      "import": "./components/button/Button.vue.js"
+    },
+    "./components/input": {
+      "types": "./components/input/Input.vue.d.ts",
+      "import": "./components/input/Input.vue.js"
     }
   },
-  "types": "./dist/types/index.d.ts"
+  "typesVersions": {
+    "*": {
+      "components/button": [
+        "./components/button/Button.vue.d.ts"
+      ],
+      "components/input": [
+        "./components/input/Input.vue.d.ts"
+      ]
+    }
+  }
 }

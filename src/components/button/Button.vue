@@ -1,6 +1,7 @@
 <script setup lang="ts">
 
 import {computed} from 'vue';
+import Icon from '../icon/Icon.vue';
 
 const props = withDefaults(defineProps<{
     size?: 'small' | 'medium' | 'big'
@@ -18,6 +19,7 @@ const cls = computed(() => props.size);
 
     <button :class="[cls]">
         <slot />
+        <Icon />
     </button>
 
 </template>
