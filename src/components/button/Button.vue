@@ -23,7 +23,7 @@ const cls = computed(() => props.size);
 </script>
 
 <template>
-    <Popper content="This is the Popper content 🍿 ::]">
+    <Popper content="This is the Popper content 🍿">
 
         <button :class="[cls]">
             <slot />
