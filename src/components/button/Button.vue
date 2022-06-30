@@ -8,7 +8,7 @@ import Popper from "vue3-popper";
 import icons from './config';
 
 const props = withDefaults(defineProps<{
-    size?: 'small' | 'medium' | 'big',
+    size?: 'small' | 'medium' | 'large',
     config: {
         icon: keyof typeof icons,
     }
@@ -23,7 +23,7 @@ const cls = computed(() => props.size);
 </script>
 
 <template>
-    <Popper content="This is the Popper content 🍿">
+    <Popper content="This is the Popper content 🍿 ::]">
 
         <button :class="[cls]">
             <slot />
@@ -35,18 +35,27 @@ const cls = computed(() => props.size);
 </template>
 
 <style scoped>
+
+*{
+    --popper-theme-background-color:#9c9393;
+}
+
+button {
+    border: 1px solid #9c9393;
+    border-radius: 4px;
+    background: aliceblue;
+    text-align: center;
+}
+
 .small {
-    width: 25px;
-    height: 25px;
+    padding: 5px 5px;
 }
 
 .medium {
-    width: 40px;
-    height: 40px;
+    padding: 5px 15px;
 }
 
 .large {
-    width: 50px;
-    height: 50px;
+    padding: 10px 20px;
 }
 </style>
