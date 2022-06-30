@@ -28,7 +28,7 @@
       "import": "./index.js"
     },
     "./components/button": {
-      "import": "./components/button/Button.vue.js"
+      "import": "./components/button/index.vue.js"
     },
     "./components/input": {
       "import": "./components/input/Input.vue.js"
@@ -37,7 +37,7 @@
   "typesVersions": {
     "*": {
       "components/button": [
-        "./components/button/Button.vue.d.ts"
+        "./components/button/index.d.ts"
       ],
       "components/input": [
         "./components/input/Input.vue.d.ts"

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 
 import {computed} from 'vue';
+import Icon from '../icon/Icon.vue';
 
 const props = withDefaults(defineProps<{
     type?: 'text' | 'number' | 'search'
@@ -17,6 +18,7 @@ const type = computed(() => props.type);
 <template>
 
     <input :type="type" />
+    <Icon />
 
 </template>
 
